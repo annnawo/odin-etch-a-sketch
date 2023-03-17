@@ -16,6 +16,7 @@ let sliderValue = slider.value;
 
 let gridContainer = document.querySelector('#gridContainer');
 let gridHolding = document.createElement('div');
+gridHolding.setAttribute('id', 'canvas');
 let initial = 0;
 
 gridCreation(sliderValue);
@@ -31,10 +32,8 @@ function gridCreation(sliderValue) {
     for (let i=0; i < (sliderValue*sliderValue); i++) {
         const gridDiv = document.createElement('div');
         gridDiv.className = 'blocks';
-        console.log(`here`);
         gridDiv.style.cssText = 'border-style: solid; border-width: 1px; border-color: black';
         gridHolding.appendChild(gridDiv);
-        
     } 
     gridContainer.appendChild(gridHolding);
 }
