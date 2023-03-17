@@ -1,27 +1,54 @@
 const slider = document.querySelector('.slider');
 let sliderValue = slider.value;
 
-const gridContainer = document.querySelector('#gridContainer');
-// const gridHolding = document.createElement('div');
+// const gridContainer = document.querySelector('#gridContainer');
+// // const gridHolding = document.createElement('div');
+// function gridCreation(sliderValue) {
+//     const gridHolding = document.createElement('div');
+//     for (let i=0; i < (sliderValue*sliderValue); i++) {
+//         const gridDiv = document.createElement('div');
+//         console.log(`here`);
+//         gridDiv.style.cssText = 'border-style: solid; border-width: 1px; border-color: black';
+//         gridHolding.appendChild(gridDiv);
+//     } 
+//     gridContainer.appendChild(gridHolding);
+// }
+
+let gridContainer = document.querySelector('#gridContainer');
+let gridHolding = document.createElement('div');
+let initial = 0;
+
+gridCreation(sliderValue);
+
 function gridCreation(sliderValue) {
-    const gridHolding = document.createElement('div');
+    //let gridDivs = gridHolding.querySelectorAll('blocks');
+    let gridTest = gridHolding.childElementCount;
+    if (gridTest !== 0) {
+        console.log(gridTest);
+        for (let j=0; j < gridTest; j++) {
+            gridHolding.removeChild(gridHolding.childNodes[0]);
+    }}
     for (let i=0; i < (sliderValue*sliderValue); i++) {
         const gridDiv = document.createElement('div');
+        gridDiv.className = 'blocks';
         console.log(`here`);
-        gridDiv.style.cssText = 'border-style: dotted; border-width: 10px; border-color: black';
+        gridDiv.style.cssText = 'border-style: solid; border-width: 1px; border-color: black';
         gridHolding.appendChild(gridDiv);
+        
     } 
     gridContainer.appendChild(gridHolding);
 }
 
-gridCreation(sliderValue);
+// function gridDeletion(gridHolding) {
+//     gridContainer
+// }
 
 slider.addEventListener('click', () => {
-    newSliderValue = slider.value;
-    console.log(sliderValue);
-    if (newSliderValue !== sliderValue) {
-        gridContainer.removeChild(gridHolding);
-        gridCreation(sliderValue);
-        return sliderValue;
-    }
+    let newSliderValue = slider.value;
+    console.log(newSliderValue);
+    // if (newSliderValue !== sliderValue) {
+    //     gridContainer.removeChild(gridHolding);
+    gridCreation(newSliderValue);
+    sliderValue = slider.value;    
+    //}
 } );
