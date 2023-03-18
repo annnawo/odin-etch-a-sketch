@@ -1,3 +1,7 @@
+:root {
+    --colNum: 20;
+}
+
 * {
     display: grid;
     background-clip: border-box;
@@ -6,11 +10,10 @@
 
 #canvas {
     display: grid;
-    /* grid-template-columns: repeat(auto-fill, 30%); */
-    /* grid-template-rows: repeat(auto-fill, 30%); */ 
-    max-width: 45rem;
-    max-height: 45rem;
+    grid-template-columns: repeat(var(--colNum), auto);
+    grid-template-rows: repeat(var(--colNum), auto);
     padding-bottom: 8rem;
+    
 }
 
 .blocks {
