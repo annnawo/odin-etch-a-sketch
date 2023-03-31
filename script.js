@@ -17,6 +17,7 @@ let sliderValue = slider.value;
 let gridContainer = document.querySelector('#gridContainer');
 let gridHolding = document.createElement('div');
 gridHolding.setAttribute('id', 'canvas');
+gridHolding.className = 'canvasGridTotal';
 let initial = 0;
 
 let r = document.querySelector(':root');
