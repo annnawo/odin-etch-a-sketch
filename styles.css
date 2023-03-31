@@ -3,9 +3,68 @@
 }
 
 * {
-    display: grid;
     background-clip: border-box;
     margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    width: 100vw;
+}
+
+.container {
+    display: grid;
+    gap: 20px;
+    height: 100vh;
+    grid-template-areas:
+      "A A A D"
+      "B B C C"
+      "E E E E";
+}
+
+.title,
+.tools,
+.canvas,
+.footer,
+.clear {
+  background-color: skyblue;
+  display: grid;
+  place-items: center;
+  height: 100%;
+}
+
+.title {
+    grid-area: A;
+  }
+
+  .tools {
+    grid-area: B;
+  }
+  
+  .canvas {
+    grid-area: C;
+  }
+  
+  .footer {
+    grid-area: D;
+  }
+  
+  .clear {
+    grid-area: E;
+  }
+
+
+/* .canvasGridTotal {
+    display: grid;
+    grid-area: canvas; 
+    border: solid 5px black;  
+}
+
+.extraF {
+    display: grid;
+    grid-area: footer;
+    border: solid 5px black;
 }
 
 #canvas {
@@ -13,11 +72,11 @@
     grid-template-columns: repeat(var(--colNum), auto);
     grid-template-rows: repeat(var(--colNum), auto);
     padding-bottom: 8rem;
-    
+    grid-gap: 0;
 }
 
 .blocks {
-    padding: 1%;
+    /* padding: 1%; */
+    /* height: 30%;
     width: 30%;
-    padding-bottom: 30%;
-}
+} */ 
