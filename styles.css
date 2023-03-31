@@ -38,22 +38,33 @@ body {
     grid-area: A;
   }
 
-  .tools {
-    grid-area: B;
-  }
+.tools {
+    grid-area: B;  
+}
   
-  .canvas {
+.canvas {
     grid-area: C;
-  }
+}
   
-  .footer {
+.footer {
     grid-area: D;
-  }
+}
   
-  .clear {
+.clear {
     grid-area: E;
-  }
+}
 
+/* Responsive Layout */
+@media only screen and (max-width: 768px) {
+.container {
+    grid-template-areas:
+    "A A D D"
+    "B B B B"
+    "C C C C"
+    "E E E E";
+    }
+}
+  
 
 /* .canvasGridTotal {
     display: grid;
