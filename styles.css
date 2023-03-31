@@ -49,6 +49,7 @@ body {
   
 .clear {
     grid-area: clear;
+    padding-top: 10vh;
 }
   
 .footer {
@@ -62,8 +63,8 @@ body {
     /* grid-area: canvas;  */
     border: solid 5px black;  
     gap: 0px;
-    width: 50vw;
-    height: 50vw;
+    width: 35vw;
+    height: 35vw;
 }
 
 .blocks {
