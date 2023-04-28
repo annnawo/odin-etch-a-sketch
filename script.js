@@ -26,18 +26,15 @@ function gridCreation(sliderValue) {
     for (let i=0; i < (sliderValue*sliderValue); i++) {
         let gridDiv = document.createElement('div');
         gridDiv.className = 'blocks';
-        gridDiv.setAttribute('id', '${i}');
-        gridDiv.addEventListener('mouseover', () => {    ///t
-                   gridDiv.style.cssText = 'background-color: yellow';  ///t
+        gridDiv.setAttribute('id', i);
+        gridDiv.addEventListener('mouseover', () => {    
+                   gridDiv.style.cssText = 'background-color: yellow';  
         });
         gridDiv.style.cssText = 'border-style: solid; border-width: 1px; border-color: black';
-        gridHolding.appendChild(gridDiv);
         gridHolding.appendChild(gridDiv);
     } 
     gridContainer.appendChild(gridHolding);
 }
-
-
 
 slider.addEventListener('click', () => {
     let newSliderValue = slider.value;
@@ -47,6 +44,23 @@ slider.addEventListener('click', () => {
     }
 } );
 
+// let gridDivClear = document.querySelectorAll('blocks');
+// let clearLength = gridDivClear.length;
+// for (i=0; i<clearLength; i++) {
+//     gridDivClear[i].addEventListener('click', () => {
+//     console.log('clicked');
+//     gridDivClear[i].style.cssText = 'background-color: white';
+// });
+// }
+
+const clearButton = document.querySelector('#clearButton');
+clearButton.addEventListener('click', () => {
+    console.log('click');
+    for (let j=0; j<lastCycle; j++) {
+        let gridDivSelect = document.getElementById(j);
+        gridDivSelect.style.cssText = 'background-color: pink';  
+}
+});
 
 gridHolding.style.cssText = 'background-color: pink';
 
