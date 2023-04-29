@@ -44,15 +44,6 @@ slider.addEventListener('click', () => {
     }
 } );
 
-// let gridDivClear = document.querySelectorAll('blocks');
-// let clearLength = gridDivClear.length;
-// for (i=0; i<clearLength; i++) {
-//     gridDivClear[i].addEventListener('click', () => {
-//     console.log('clicked');
-//     gridDivClear[i].style.cssText = 'background-color: white';
-// });
-// }
-
 const clearButton = document.querySelector('#clearButton');
 clearButton.addEventListener('click', () => {
     console.log('click');
