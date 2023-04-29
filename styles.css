@@ -6,6 +6,16 @@
     background-clip: border-box;
     margin: 0;
     box-sizing: border-box;
+    background-color: #f6f6f6;
+}
+
+body:not(.title) {
+    font-family: 'Raleway', sans-serif;
+}
+
+@font-face {
+    font-family: 'titleFont';
+    src: url(newyork_font/newyork_personal.otf);
 }
 
 body {
@@ -28,8 +38,7 @@ body {
 .canvas,
 .footer,
 .clear {
-  border: 2px black solid;
-  background-color: skyblue;
+  /* border: 2px black solid; */
   display: grid;
   place-items: center;
   /* height: 100%; */
@@ -37,6 +46,8 @@ body {
 
 .title {
     grid-area: title;
+    font-family: 'titleFont', "Avant Garde", serif;
+    font-size: 1.75em;    
 }
 
 .tools {
@@ -60,8 +71,8 @@ body {
     display: grid;
     grid-template-columns: repeat(var(--colNum), auto);
     grid-template-rows: repeat(var(--colNum), auto);
-    /* grid-area: canvas;  */
-    border: solid 5px black;  
+    border: solid 5px black; 
+    border-radius: 2%; 
     gap: 0px;
     width: 35vw;
     height: 35vw;
