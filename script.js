@@ -26,10 +26,15 @@ function gridCreation(sliderValue) {
     for (let i=0; i < (sliderValue*sliderValue); i++) {
         let gridDiv = document.createElement('div');
         gridDiv.className = 'blocks';
-        gridDiv.setAttribute('id', i);
-        gridDiv.addEventListener('mouseover', () => {    
-                   gridDiv.style.cssText = 'background-color: yellow';  
-        });
+        gridDiv.setAttribute('id', `${i}`);
+        // gridDiv.addEventListener('mouseover', () => {    
+                //    gridDiv.style.cssText = 'background-color: yellow';  
+        // });
+
+        gridDiv.addEventListener('mouseover', function() {
+            setInkColor(i);
+        });   
+
         gridDiv.style.cssText = 'border-style: solid; border-width: 1px; border-color: black';
         gridHolding.appendChild(gridDiv);
     } 
@@ -53,5 +58,16 @@ clearButton.addEventListener('click', () => {
 }
 });
 
-gridHolding.style.cssText = 'background-color: pink';
+//gridHolding.style.cssText = 'background-color: pink';
 
+
+
+// colors
+
+// let blackInk = document.querySelector('#blackOptionI').addEventListener('click', setInkColor);
+let inkColor;
+
+function setInkColor(tile) {
+    let gridSelect = document.getElementById(tile);
+    gridSelect.style.cssText = 'background-color: pink';
+}
