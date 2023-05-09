@@ -9,8 +9,14 @@
     background-color: #f6f6f6;
 }
 
+
 body:not(.title) {
     font-family: 'Raleway', sans-serif;
+}
+
+.tools > h3 {
+    font-style: italic;
+    /* padding-bottom: .7rem; */
 }
 
 @font-face {
@@ -51,9 +57,25 @@ body {
 }
 
 .tools {
-    grid-area: tools;  
+    grid-area: tools; 
+    display: flex;
+    flex-direction: column;
+    /* flex-wrap: wrap; */
+    /* justify-content: space-around;  */
+    padding-top: 2rem;
+    justify-content: space-evenly; 
+    /* border: solid blue 2px; */
+    padding-left: 3rem;
+    margin-left: 3rem;
 }
-  
+
+.test > * {
+    /* justify-content: space-around; */
+    padding-bottom: 2rem;
+}
+
+
+
 .canvas {
     grid-area: canvas;
 }
@@ -71,7 +93,7 @@ body {
     display: grid;
     grid-template-columns: repeat(var(--colNum), auto);
     grid-template-rows: repeat(var(--colNum), auto);
-    border: solid 5px black; 
+    border: solid 4px black; 
     border-radius: 2%; 
     gap: 0px;
     width: 35vw;
@@ -93,4 +115,14 @@ body {
     "canvas canvas canvas canvas"
     "foot foot foot foot";
     }
+}
+
+.inkColors, .canvasColors {
+    list-style: none;
+    display: flex;
+    /* border: solid 1px black; */
+}
+
+#gradientOptionI {
+    max-width: 2rem;
 }

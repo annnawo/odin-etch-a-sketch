@@ -6,7 +6,7 @@
         <link rel="stylesheet" href="styles.css">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;600&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,400;0,600;0,700;0,800;1,600;1,700;1,800&display=swap" rel="stylesheet">
     </head>
     <div class="container">
         <body>
@@ -15,25 +15,43 @@
             </div>
             <div class="tools">
                 <h3>tools</h3>
+
+                <div class="test"> 
+
                 <div class="inkColorSelection">
                     <h4>ink color</h4>
-                    <div id="blackOptionI"></div>
-                    <div id="randomOptionI">?</div> 
-                    <img id="rainbowOptionI" src="gradientcircle.png" alt="purple gradient">
+                    <ul class="inkColors">
+                        <li id="blackOptionI"></li>
+                        <li id="randomOptionI">?</li> 
+                        <li><img id="gradientOptionI" src="gradientcircle.png" alt="purple gradient"></li>
+                    </ul>   
                 </div>
                 <div class="gridColorSelection">
                     <h4>canvas color</h4>
-                    <div id="clearOptionG"></div>
-                    <div id="blackOptionG"></div>
-                    <div id="randomOptionG">?</div>
+                    <ul class="canvasColors">
+                        <li id="clearOptionG"></li>
+                        <li id="blackOptionG"></li>
+                        <li id="randomOptionG">?</li>
+                    </ul>   
                 </div>
+
+                <!-- </div> -->
+                <!-- <div class="test">   -->
+
                 <div class="gridSizing">
                     <h4>grid dimensions</h4>
                     <input type="range" min="1" max="100" value="20" class="slider">
                 </div>
                 <div class="borderToggle">
                     <h4>grid lines</h4>
+                    <label class="switch">
+                        <input type="checkbox">
+                        <span class="slider round"></span>
+                    </label>
                 </div>
+
+                </div>
+
             </div>
             <div class="canvas" id="gridContainer"></div>
             <div class="clear">
