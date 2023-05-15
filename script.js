@@ -11,6 +11,7 @@ let lastCycle = 0;
 let r = document.querySelector(':root');
 
 let inkColor = '#000000';
+let canvasColor = '#f6f6f6';
 
 // const gridVar = window.getComputedStyle(document.querySelector('html'));
 // let rowNum = parseInt(gridVar.getPropertyValue('--rowNum'));
@@ -32,7 +33,7 @@ function gridCreation(sliderValue) {
         gridDiv.addEventListener('mouseover', () => {    
             gridDiv.style.cssText = `background-color: ${inkColor}`;  
         });
-        gridDiv.style.cssText = 'border-style: solid; border-width: 1px; border-color: black';
+        gridDiv.style.cssText = `border-style: solid; border-width: 1px; border-color: black; background-color: ${canvasColor};`;
         gridHolding.appendChild(gridDiv);
     } 
     gridContainer.appendChild(gridHolding);
@@ -46,11 +47,10 @@ slider.addEventListener('click', () => {
     }
 } );
 
-const clearButton = document.querySelector('#clearButton');
-clearButton.addEventListener('click', () => {
+const clearButton = document.querySelector('#clearButton').addEventListener('click', () => {
     for (let j=0; j<lastCycle; j++) {
         let gridDivSelect = document.getElementById(j);
-        gridDivSelect.style.cssText = 'background-color: #f6f6f6';     
+        gridDivSelect.style.cssText = `background-color: ${canvasColor}`;     
     }
 });
 
@@ -95,20 +95,134 @@ let gradientInk = document.querySelector('#gradientOptionI').addEventListener('c
         setInk(inkColor, j);
 }})  
 
+// let randomInk = document.querySelector('#randomOptionI').addEventListener('click',  () => {
+//     for (let j=0; j<lastCycle; j++) {
+//         let newColor ='#';
+//         for (let m=0; m<6; m++) {
+//            let colInt = Math.floor(Math.random()*7);
+//            if (colInt === 1) {
+//             newColor += 'a';
+//            }
+//            else if (colInt === 2) {
+//             newColor += 'b';
+//            }
+//            else if (colInt === 3) {
+//             newColor += 'c';
+//            }
+//            else if (colInt === 4) {
+//             newColor += 'd';
+//            }
+//            else if (colInt === 5) {
+//             newColor += 'e;'
+//            }
+//            else {
+//             newColor += 'f';
+//            }
+           
+//         }
+//         inkColor = newColor;
+//         newColor = '#';
+//         setInk(inkColor, j);
+// }});
+let newColor ='#';
 let randomInk = document.querySelector('#randomOptionI').addEventListener('click',  () => {
     for (let j=0; j<lastCycle; j++) {
-        let newColor ='#';
-        for (let m=0; m<6; m++) {
-           newColor += Math.floor(Math.random()*10);
-        }
+        newColor ='#';
+        randomizeColor();
         inkColor = newColor;
         newColor = '#';
         setInk(inkColor, j);
+        newColor = '#';
+    }
+});
+
+function randomizeColor() {
+    newColor = '#';
+    for (let m=0; m<6; m++) {
+        let colInt = Math.floor(Math.random()*7);
+        if (colInt === 1) {
+         newColor += 'a';
+        }
+        else if (colInt === 2) {
+         newColor += 'b';
+        }
+        else if (colInt === 3) {
+         newColor += 'c';
+        }
+        else if (colInt === 4) {
+         newColor += 'd';
+        }
+        else if (colInt === 5) {
+         newColor += 'e;'
+        }
+        else {
+         newColor += 'f';
+}}}
+
+//     for (let j=0; j<lastCycle; j++) {
+//         let newColor ='#';
+//         for (let m=0; m<6; m++) {
+//            let colInt = Math.floor(Math.random()*7);
+//            if (colInt === 1) {
+//             newColor += 'a';
+//            }
+//            else if (colInt === 2) {
+//             newColor += 'b';
+//            }
+//            else if (colInt === 3) {
+//             newColor += 'c';
+//            }
+//            else if (colInt === 4) {
+//             newColor += 'd';
+//            }
+//            else if (colInt === 5) {
+//             newColor += 'e;'
+//            }
+//            else {
+//             newColor += 'f';
+//            }
+           
+//         }
+//         inkColor = newColor;
+//         newColor = '#';
+//         setInk(inkColor, j);
+// }});
+
+let blackCanvas = document.querySelector('#blackOptionG').addEventListener('click', () => {
+    canvasColor = '#000000';
+    for (let l=0; l<lastCycle; l++) {
+        setCanvasC(canvasColor, l);
 }});
 
-// function setInkColor(tile, colorI) {
+let clearCanvas = document.querySelector('#clearOptionG').addEventListener('click', () => {
+    canvasColor = '#f6f6f6';
+    for (let l=0; l<lastCycle; l++) {
+        setCanvasC(canvasColor, l);
+}});
+
+let randomCanvas = document.querySelector('#randomOptionG').addEventListener('click', () => {
+    randomizeColor();
+    canvasColor = newColor;
+    console.log(canvasColor);
+    for (let l=0; l<lastCycle; l++) {
+        setCanvasC(canvasColor, l);
+}});
+
+function setInk(colorI, k) {
+    let gridDivSelect = document.getElementById(k);
+    gridDivSelect.addEventListener('mouseover', function() {
+    gridDivSelect.style.cssText = `background-color: ${colorI}`;
+});  
+}
+
+function setCanvasC(colorC, k) {
+    let gridDivSelect = document.getElementById(k);
+    gridDivSelect.style.cssText = `background-color: ${colorC}`;
+}
+
+// function setInk(colorI, tile) {
 //     let gridSelect = document.getElementById(tile);
-//     gridSelect.style.cssText = 'background-color: pink';
+//     gridSelect.style.cssText = `background-color: ${colorI}`;
 // }
 
 // function setInk(colorI) {
@@ -119,9 +233,9 @@ let randomInk = document.querySelector('#randomOptionI').addEventListener('click
 //         });  
 // }}
 
-function setInk(colorI, k) {
-        let gridDivSelect = document.getElementById(k);
-        gridDivSelect.addEventListener('mouseover', function() {
-        gridDivSelect.style.cssText = `background-color: ${colorI}`;
-});  
-}
+// function setInk(colorI, k) {
+//     inkColor = '#000000';
+//     for (let j=0; j<lastCycle; j++) {
+//     setInk(inkColor, j);
+// }};
+
