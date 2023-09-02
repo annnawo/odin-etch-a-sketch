@@ -1,154 +1,159 @@
 :root {
     --colNum: 20;
-}
-
-* {
+  }
+  
+  * {
     background-clip: border-box;
     margin: 0;
     box-sizing: border-box;
     background-color: #f6f6f6;
-}
-
-
-body:not(.title) {
+  }
+  
+  
+  body:not(.title),
+  .clear-b {
     font-family: 'Raleway', sans-serif;
-}
-
-.tools > h3 {
+    font-size: 1.2rem;
+  }
+  
+  .tools > h3 {
     font-style: italic;
-    /* padding-bottom: .7rem; */
-}
-
-@font-face {
+  }
+  
+  @font-face {
     font-family: 'titleFont';
     src: url(newyork_font/newyork_personal.otf);
-}
-
-body {
+  }
+  
+  body {
     height: 100vh;
     width: 100vw;
-}
-
-.container {
+  }
+  
+  .container {
     display: grid;
     height: 100vh;
     width: 100vw;
     grid-template-areas:
-      "title title title clear"
-      "tools tools canvas canvas"
-      "foot foot foot foot";
-}
-
-.title,
-.tools,
-.canvas,
-.footer,
-.clear {
-  /* border: 2px black solid; */
+      "title title"
+      "tools canvas"
+      "foot foot";
+  }
+  
+  .title,
+  .tools,
+  .canvas,
+  .footer {
   display: grid;
   place-items: center;
-  /* height: 100%; */
-}
-
-.title {
+  }
+  
+  .title {
     grid-area: title;
     font-family: 'titleFont', "Avant Garde", serif;
-    font-size: 1.75em;    
-}
-
-.tools {
+    font-size: 2.5rem;    
+  }
+  
+  .tools {
     grid-area: tools; 
     display: flex;
     flex-direction: column;
-    /* flex-wrap: wrap; */
-    /* justify-content: space-around;  */
     padding-top: 2rem;
-    /* justify-content: space-evenly;  */
-    border: solid blue 2px;
-    /* padding-left: 3rem; */
     margin-left: 6rem;
-}
-
-.canvas {
+  }
+  
+  .tools-title {
+    padding-bottom: 8%;
+  }
+  
+  .tools-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 80%;
+  }
+  
+  .tool-cont {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    > h4 {
+      align-self: center;
+      padding-bottom: 7%;
+    }
+  }
+  
+  .color-click,
+  .clear-b {
+    &:hover {
+      cursor: pointer;
+    }
+  }
+  
+  .canvas {
     grid-area: canvas;
-}
+  }
   
-.clear {
-    grid-area: clear;
-    padding-top: 10vh;
-}
-  
-.footer {
+  .footer {
     grid-area: foot;
-}
-
-.canvasGridTotal {
+  }
+  
+  .canvas-grid-total {
     display: grid;
     grid-template-columns: repeat(var(--colNum), auto);
     grid-template-rows: repeat(var(--colNum), auto);
     border: solid 4px black; 
-    border-radius: 2%; 
+    border-radius: 1.5%; 
     gap: 0px;
     width: 35vw;
     height: 35vw;
-}
-
-.blocks {
+  }
+  
+  .blocks {
     padding: 10%;
     height: 100%;
     width: 100%;
-} 
-
-/* Responsive Layout */
-@media only screen and (max-width: 768px) {
-.container {
-    grid-template-areas:
-    "title title clear clear"
-    "tools tools tools tools"
-    "canvas canvas canvas canvas"
-    "foot foot foot foot";
-    }
-}
-
-.inkColors, .canvasColors {
+  } 
+  
+  .ink-colors, .canvas-colors {
     list-style: none;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
     padding: 0;
-    border: solid 1px black;
-}
-
-#gradientOptionI {
+  }
+  
+  #gradient-option-1 {
     width: 100%;
     height: 100%;
     max-width: 5vh;
     padding-top: .5vh;
-}
-
-#blackOptionI, #randomOptionI, #blackOptionG, #clearOptionG, #randomOptionG, #gradientOptionG {
+  }
+  
+  #black-option-1, #random-option-1, #black-option-g, #clear-option-g, #random-option-g, #gradient-option-g {
     padding: 1rem;
     border-radius: 50%;
     width: 100%;
     height: 100%;
     max-width: 5vh;
     max-height: 5vh;
-}
-
-#blackOptionI, #blackOptionG {
+  }
+  
+  #black-option-1, #black-option-g {
     background-color: black;
     padding: 1.096rem;
-}
-
-#randomOptionI, #randomOptionG, #clearOptionG {
+  }
+  
+  #random-option-1, #random-option-g, #clear-option-g {
     border: solid .096rem black;
-}
-
-#randomOptionI, #randomOptionG {
+  }
+  
+  #random-option-1, #random-option-g {
     font-weight: 600;
     display: inline-flex;
     overflow-wrap: break-word;
     justify-content: center;
     align-items: center;
-}
-
+  }
+  
+  

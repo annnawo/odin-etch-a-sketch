@@ -14,41 +14,41 @@
                 <h1>sketch</h1>
             </div>
             <div class="tools">
-                <h3>tools</h3>
-                <div class="test"> 
-                <div class="inkColorSelection">
+                <h3 class="tools-title">tools</h3>
+                <div class="tools-body"> 
+                <div class="ink-color-selection tool-cont">
                     <h4>ink color</h4>
-                    <ul class="inkColors">
-                        <li><div id="blackOptionI"></div></li>
-                        <li><img id="gradientOptionI" src="gradientcircle.png" alt="purple gradient"></li>
-                        <li><div id="randomOptionI">?</div></li> 
+                    <ul class="ink-colors">
+                        <li><div id="black-option-1"  class="color-click"></div></li>
+                        <li><img id="gradient-option-1" src="gradientcircle.png" alt="purple gradient"  class="color-click"></li>
+                        <li><div id="random-option-1" class="color-click">?</div></li> 
                     </ul>   
                 </div>
-                <div class="gridColorSelection">
+                <div class="grid-color-selection tool-cont">
                     <h4>canvas color</h4>
-                    <ul class="canvasColors">
-                        <li><div id="blackOptionG"></div></li>
-                        <li><div id="clearOptionG"></div></li>
-                        <li><div id="randomOptionG">?</div></li>
+                    <ul class="canvas-colors">
+                        <li><div id="black-option-g" class="color-click"></div></li>
+                        <li><div id="clear-option-g" class="color-click"></div></li>
+                        <li><div id="random-option-g">?</div></li>
                     </ul>   
                 </div>
-                <div class="gridSizing">
+                <div class="grid-sizing tool-cont">
                     <h4>grid dimensions</h4>
                     <input type="range" min="1" max="100" value="20" class="slider">
                 </div>
-                <div class="borderToggle">
+                <!-- Option to add an inner border on the grid blocks -->
+                <!-- <div class="border-toggle tool-cont">
                     <h4>grid lines</h4>
                     <label class="switch">
-                        <input type="checkbox">
-                        <span class="slider round"></span>
+                        <input type="checkbox" name="border-check">
                     </label>
+                </div> -->
+                <div class="clear tool-cont">
+                    <button id="clear-button" type="button" class="clear-b">clear</button>
                 </div>
                 </div>
             </div>
-            <div class="canvas" id="gridContainer"></div>
-            <div class="clear">
-                <button id="clearButton" type="button">clear</button>
-            </div>
+            <div class="canvas" id="grid-container"></div>
             <div class="footer">| 2023 |</div>
         </body>
     </div>
